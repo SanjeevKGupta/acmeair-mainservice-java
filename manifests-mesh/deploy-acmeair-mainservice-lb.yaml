@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: acmeair-main-service-lb
+spec:
+  type: LoadBalancer
+  selector:
+    name: acmeair-main-deployment
+  ports:
+  - name: http
+    port: 80
+    targetPort: 9080
